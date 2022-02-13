@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
+import List from "./List";
+import Search from "./Search";
 
 function App() {
+  const data = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "NodeJS"];
+  const [search, setSearch] = useState("");
+  const [items, setItems] = useState(data);
+  useEffect(() => {
+    setItems(
+      data.filter((el) => el.toLowerCase().includes(search.toLowerCase()))
+    );
+  }, [search]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search value={search} onChange={(e) => setSearch(e.target.value)}>
+        Find Course:
+      </Search>
+      <List items={items} />
     </div>
   );
 }
