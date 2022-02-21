@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import List from "./List";
-import Search from "./Search";
+import List from "./List.tsx";
+import Search from "./Search.tsx";
 
-function App() {
-  const data = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "NodeJS"];
+const App =()=> {
+  const data :string[] = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "NodeJS"];
   const [search, setSearch] = useState("");
   const [items, setItems] = useState(data);
   useEffect(() => {

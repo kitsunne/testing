@@ -4,9 +4,7 @@ import {
   shoppingList,
   filteredList,
   users,
-  greeting,
   filteredUsers,
-  hello,
 } from "../functions";
 
 describe("sum function", () => {

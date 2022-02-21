@@ -1,5 +1,6 @@
-const List = (props) => {
-  const { items = {} } = props;
+import "./list.css";
+const List = (props: {items?: Array <string>}) => {
+  const { items = [] } = props;
   if (!items.length) return null;
 
   return (

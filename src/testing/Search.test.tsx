@@ -16,16 +16,16 @@ describe("Search component", () => {
   });
 
   test("List renders without children", () => {
-    render(<Search value="" onChange={onChange} />);
+    render(<Search value="" onChange={onChange} children={""} />);
     expect(screen.getByText(/search/i)).toBeInTheDocument();
   });
 
   test("List renders without placeholder", () => {
-    render(<Search value="" onChange={onChange} />);
+    render(<Search value="" onChange={onChange} children={""} />);
     expect(screen.getByPlaceholderText(/search/i)).toBeInTheDocument();
   });
   test("custom placeholder works correctly", () => {
-    render(<Search value="" onChange={onChange} placeholder="find post" />);
+    render(<Search value="" onChange={onChange} placeholder="find post" children={""} />);
     expect(screen.getByPlaceholderText(/find post/i)).toBeInTheDocument();
   });
 

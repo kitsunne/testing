@@ -1,9 +1,9 @@
-import { Lodash } from "../sync";
+import { Lodash } from "../sync.tsx";
 
 let _ = new Lodash();
 
 describe("Lodash: compact", () => {
-  let array;
+  let array:any[];
   beforeEach(() => {
     array = [false, 42, 0, "", true, null, "hi"];
   });
@@ -17,7 +17,7 @@ describe("Lodash: compact", () => {
   });
 
   test("should remove falsy values from array", () => {
-    const result = [42, true, "hi"];
+    const result:any[] = [42, true, "hi"];
     expect(_.compact(array)).toEqual(result);
   });
 
